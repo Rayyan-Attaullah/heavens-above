@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run start # Update with your build command
+        run: npm run build # Update with your build command
 
       - name: Test
         run: npm test  # Update with your test command

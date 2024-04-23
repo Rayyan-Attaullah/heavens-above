@@ -6,7 +6,8 @@
   "main": "run.js",
   "scripts": {
     "start": "node run.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "echo 'Add your build command here'"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
