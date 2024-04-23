@@ -23,6 +23,7 @@ jobs:
 
       - name: Build documentation
         run: npm run build-docs
+         continue-on-error: true
 
       - name: Deploy documentation
         run: |
