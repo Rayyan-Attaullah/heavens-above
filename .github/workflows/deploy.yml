@@ -21,8 +21,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
-        run: npm run build # Update with your build command
+      - name: Build Docker image
+        run: docker build -t myapp .
 
       - name: Test
         run: npm test  # Update with your test command
