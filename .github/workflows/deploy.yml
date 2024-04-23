@@ -36,4 +36,4 @@ jobs:
           deploy-message: 'Deployed using GitHub Actions'  # Specify deployment message
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}  # Set Netlify authentication token as a secret
           enable-pull-request-comment: 'false'  # Disable PR comments (optional)
-          continue-on-error: true
+     
