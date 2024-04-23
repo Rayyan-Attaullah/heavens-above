@@ -1,0 +1,13 @@
+name: Documentation Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Add steps to build and deploy documentation to hosting platform
