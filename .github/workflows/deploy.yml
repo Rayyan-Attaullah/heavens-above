@@ -16,20 +16,22 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Install dependencies
         run: npm install
 
       - name: Build
-        run: npm run start  # Replace with your build command
+        run: npm run start # Update with your build command
 
       - name: Test
-        run: npm test  # Replace with your test command
+        run: npm test  # Update with your test command
 
-      - name: Deploy to Heroku
-        uses: akhileshns/heroku-deploy@v3.12.12
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1
         with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: 'your-heroku-app-name'
-          heroku_email: 'your-heroku-email@example.com'
+          publish-dir: './public'  # Specify the directory to deploy
+          deploy-dir: './dist'     # Specify the directory to deploy (optional)
+          deploy-message: 'Deployed using GitHub Actions'  # Specify deployment message
+          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}  # Set Netlify authentication token as a secret
+          enable-pull-request-comment: 'false'  # Disable PR comments (optional)
