@@ -32,8 +32,11 @@ jobs:
         uses: nwtgck/actions-netlify@v1
         with:
           publish-dir: './public'  # Specify the directory to deploy
-          deploy-dir: './dist'     # Specify the directory to deploy (optional)
           deploy-message: 'Deployed using GitHub Actions'  # Specify deployment message
-          netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}  # Set Netlify authentication token as a secret
+          github-token: ${{ secrets.GITHUB_TOKEN }}  # Set GitHub token for deployment
+          production-branch: 'main'  # Specify the production branch
           enable-pull-request-comment: 'false'  # Disable PR comments (optional)
+          enable-commit-comment: 'false'  # Disable commit comments (optional)
+          enable-commit-status: 'false'  # Disable commit status (optional)
+
      
