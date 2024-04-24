@@ -26,3 +26,5 @@ jobs:
         run: |
           node iridium.js
           node satellite.js
+        continue-on-error: true 
+
