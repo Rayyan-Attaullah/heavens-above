@@ -1,8 +1,9 @@
 name: Dependency Updates
 
 on:
-  schedule:
-    - cron: '0 6 * * *'  # Run daily at 6:00 AM UTC
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
 
 jobs:
   update:
