@@ -1,8 +1,9 @@
 name: Scheduled Tasks
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight UTC
+  push:
+    branches:
+      - main  # Adjust the branch name as needed
 
 jobs:
   fetch-satellite-data:
