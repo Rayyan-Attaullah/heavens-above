@@ -1,12 +1,11 @@
 name: Scheduled Tasks
 
 on:
-  push:
-    branches:
-      - main  # Adjust the branch name as needed
+  schedule:
+    - cron: '0 0 * * *' # This will run every day at midnight UTC
 
 jobs:
-  fetch-satellite-data:
+  npm-install:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,11 +19,3 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Fetch and process satellite data
-        working-directory: HEAVENS-ABOVE/src  # Adjust the path accordingly
-        run: |
-          node iridium.js
-          node satellite.js
-        continue-on-error: true 
-

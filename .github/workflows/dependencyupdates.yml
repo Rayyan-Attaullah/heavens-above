@@ -3,7 +3,10 @@ name: Dependency Updates
 on:
   push:
     branches:
-      - main  # Adjust the branch name as needed
+      - main  # Trigger on push events to the main branch
+  pull_request:
+    branches:
+      - main  # Trigger on pull requests targeting the main branch
 
 jobs:
   update:
@@ -20,9 +23,3 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Check for updates
-        run: npm outdated
-
-      - name: Update dependencies
-        run: npm update
