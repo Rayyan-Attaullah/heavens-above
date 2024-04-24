@@ -22,6 +22,7 @@ jobs:
         run: npm install
 
       - name: Fetch and process satellite data
+        working-directory: HEAVENS-ABOVE/src  # Adjust the path accordingly
         run: |
           node iridium.js
           node satellite.js
